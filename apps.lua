@@ -22,6 +22,10 @@ for key, app in pairs(applicationHotkeys) do
         hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app}):send()
         hs.application.launchOrFocus(app)
     end)
+    hs.hotkey.bind(hyperNoShift, key, function()
+        hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app}):send()
+        hs.application.launchOrFocus(app)
+    end)
 end
 
 -- hs.alert.show('Apps 📌: Ready to rock 🤘!')
