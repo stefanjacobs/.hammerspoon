@@ -8,7 +8,7 @@ windowLastLayout = "none"
 hs.window.animationDuration = 0.3
 
 -- move left
-hs.hotkey.bind(hyper, "h", function()
+function moveLeft()
     local win = hs.window.focusedWindow();
     if not win then return end
 
@@ -26,10 +26,12 @@ hs.hotkey.bind(hyper, "h", function()
         windowLastLayout=hs.layout.left50
     end
     windowLastAction = "left"
-end)
+end
+hs.hotkey.bind(hyper, "h", moveLeft)
+hs.hotkey.bind(hyperNoShift, "h", moveLeft)
 
 -- move right
-hs.hotkey.bind(hyper, "l", function()
+function moveRight()
     local win = hs.window.focusedWindow();
     if not win then return end
 
@@ -47,47 +49,58 @@ hs.hotkey.bind(hyper, "l", function()
         windowLastLayout=hs.layout.right50
     end
     windowLastAction = "right"
-end)
+end
+hs.hotkey.bind(hyper, "l", moveRight)
+hs.hotkey.bind(hyperNoShift, "l", moveRight)
 
 -- move maximize
-hs.hotkey.bind(hyper, "k", function()
+function maximize()
     local win = hs.window.focusedWindow();
     if not win then return end
-    --win:moveToUnit(hs.layout.maximized)
     win:maximize()
     windowLastAction = "up"
-end)
+end
+hs.hotkey.bind(hyper, "k", maximize)
+hs.hotkey.bind(hyperNoShift, "k", maximize)
 
 -- move minimize 
-hs.hotkey.bind(hyper, "j", function()
+function minimize()
     local win = hs.window.focusedWindow();
     if not win then return end
     win:minimize()
     windowLastAction = "down"
-end)
+end
+hs.hotkey.bind(hyper, "j", minimize)
+hs.hotkey.bind(hyperNoShift, "j", minimize)
 
 -- close window
-hs.hotkey.bind(hyper, "c", function()
+function close()
     local win = hs.window.focusedWindow();
     if not win then return end
     win:close()
     windowLastAction = "close"
-end)
+end
+hs.hotkey.bind(hyper, "c", close)
+hs.hotkey.bind(hyperNoShift, "c", close)
 
 -- Fullscreen 
-hs.hotkey.bind(hyper, "z", function()
+function fullscreen()
     local win = hs.window.focusedWindow();
     if not win then return end
     win:toggleFullScreen() -- works better than toggleZoom()!
     windowLastAction = "fullscreen"
-end)
+end
+hs.hotkey.bind(hyper, "z", fullscreen)
+hs.hotkey.bind(hyperNoShift, "z", fullscreen)
 
 -- Next Screen (not tested)
-hs.hotkey.bind(hyper, "n", function()
+function nextscreen()
     local win = hs.window.focusedWindow();
     if not win then return end
     win:moveToScreen(win:screen():next())
     windowLastAction = "next screen"
-end)
+end
+hs.hotkey.bind(hyper, "n", nextscreen)
+hs.hotkey.bind(hyperNoShift, "n", nextscreen)
 
 -- hs.alert.show('Window 🖥️: Ready to rock 🤘!')
