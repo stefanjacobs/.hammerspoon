@@ -10,7 +10,7 @@ require('reload') -- hyper-0
 require('apps') -- hyper -> and many buttons
 require('window') -- hyper-hjkl z n c
 require('wifi') -- hyper-w
-
+require('keyboard')
 -- local log = hs.logger.new('init.lua', 'debug')
 
 -- keyUpDown = function(modifiers, key)
