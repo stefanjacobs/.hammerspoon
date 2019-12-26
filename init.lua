@@ -4,6 +4,8 @@ hyperNoShift = { "cmd", "alt", "ctrl"}
 moduleString = "\n"
 
 -- hs.loadSpoon('ControlEscape'):start()
+hs.loadSpoon('SpeedMenu'):start()
+hs.loadSpoon('TimeMachineProgress'):start()
 -- moduleString = moduleString .. "⌨️ - ControlEscape\n"
 require('battery') -- hyper-b 
 require('reload') -- hyper-0
