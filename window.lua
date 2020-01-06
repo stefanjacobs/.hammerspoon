@@ -97,10 +97,47 @@ hs.hotkey.bind(hyperNoShift, "z", fullscreen)
 function nextscreen()
     local win = hs.window.focusedWindow();
     if not win then return end
-    win:moveToScreen(win:screen():next())
+
+    local fullscreen = win:isFullScreen()
+    if fullscreen then 
+        win:toggleFullScreen()
+    end
+    win:moveToScreen(win:screen():next(), false, true, 1.0)
+    if fullscreen then
+        hs.timer.doAfter(1.0, function()
+            win:toggleFullScreen()
+        end)
+    end
     windowLastAction = "next screen"
 end
 hs.hotkey.bind(hyper, "n", nextscreen)
 hs.hotkey.bind(hyperNoShift, "n", nextscreen)
+
+function moveWindowToDisplay(d)
+    return function()
+        local displays = hs.screen.allScreens()
+        local win = hs.window.focusedWindow()
+        if not win then return end
+
+        local fullscreen = win:isFullScreen()
+        if fullscreen then 
+            win:toggleFullScreen()
+        end
+        win:moveToScreen(displays[d], false, true)
+        if fullscreen then
+            hs.timer.doAfter(1.0, function()
+                win:toggleFullScreen()
+            end)
+        end
+        windowLastAction = "next screen"
+    end
+end
+
+hs.hotkey.bind(hyperNoShift, "1", moveWindowToDisplay(1))
+hs.hotkey.bind(hyperNoShift, "2", moveWindowToDisplay(2))
+hs.hotkey.bind(hyperNoShift, "3", moveWindowToDisplay(3))
+hs.hotkey.bind(hyper, "1", moveWindowToDisplay(1))
+hs.hotkey.bind(hyper, "2", moveWindowToDisplay(2))
+hs.hotkey.bind(hyper, "3", moveWindowToDisplay(3))
 
 -- hs.alert.show('Window 🖥️: Ready to rock 🤘!')
