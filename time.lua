@@ -10,10 +10,14 @@ hs.hotkey.bind(hyperNoShift, "´", time)
 
 
 function timewarriorStatus()
-    local handle = io.popen("/usr/local/bin/timew summary")
+    local handle = io.popen("/usr/local/bin/timew")
     local result = handle:read("*a")
     handle:close()
-    hs.alert.show(result) -- TODO: Pretty format
+    if (string.match(result, "no active")) then
+        hs.alert.show("🕰️: No active time tracking!")
+    else
+        hs.alert.show("🕰️: Currently tracking time...")
+    end
 end
 
 hs.hotkey.bind(hyperNoShift, "-", timewarriorStatus)
@@ -24,7 +28,11 @@ function timewarriorToggle()
     local handle = io.popen("~/bin/tw.sh")
     local result = handle:read("*a")
     handle:close()
-    hs.alert.show(result) -- TODO: Pretty format
+    if (string.match(result, "STOPPING")) then
+        hs.alert.show("🕰️: 🛑 Stop tracking")
+    else
+        hs.alert.show("🕰️: 🎬 Start tracking")
+    end
 end
 
 hs.hotkey.bind(hyperNoShift, "+", timewarriorToggle)
