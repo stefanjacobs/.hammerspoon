@@ -93,7 +93,7 @@ end
 hs.hotkey.bind(hyper, "z", fullscreen)
 hs.hotkey.bind(hyperNoShift, "z", fullscreen)
 
--- Next Screen (not tested)
+-- Next Screen
 function nextscreen()
     local win = hs.window.focusedWindow();
     if not win then return end
@@ -113,6 +113,7 @@ end
 hs.hotkey.bind(hyper, "n", nextscreen)
 hs.hotkey.bind(hyperNoShift, "n", nextscreen)
 
+-- Move focussed window to next display
 function moveWindowToDisplay(d)
     return function()
         local displays = hs.screen.allScreens()
