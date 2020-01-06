@@ -11,7 +11,7 @@ require('reload') -- hyper-0
 require('apps') -- hyper -> and many buttons
 require('window') -- hyper-hjkl z n c
 require('wifi') -- hyper-w
-require('vendo') -- hyper- .,
+require('vendosecret') -- hyper- .,
 require('time') -- hyper- -
 -- local log = hs.logger.new('init.lua', 'debug')
 
