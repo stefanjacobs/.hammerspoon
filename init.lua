@@ -6,13 +6,13 @@ moduleString = "\n"
 -- hs.loadSpoon('ControlEscape'):start()
 hs.loadSpoon('SpeedMenu'):start()
 -- hs.loadSpoon('TimeMachineProgress'):start()
--- moduleString = moduleString .. "⌨️ - ControlEscape\n"
 require('battery') -- hyper-b 
 require('reload') -- hyper-0
 require('apps') -- hyper -> and many buttons
 require('window') -- hyper-hjkl z n c
 require('wifi') -- hyper-w
-require('keyboard')
+require('vendo') -- hyper- .,
+require('time') -- hyper- -
 -- local log = hs.logger.new('init.lua', 'debug')
 
 -- keyUpDown = function(modifiers, key)
