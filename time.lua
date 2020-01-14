@@ -8,6 +8,9 @@ end
 hs.hotkey.bind(hyper, "´", time)
 hs.hotkey.bind(hyperNoShift, "´", time)
 
+function ltrim(s)
+    return s:match'^%s*(.*)'
+end
 
 function timewarriorStatus()
     local handle = io.popen("/usr/local/bin/timew")
@@ -16,7 +19,14 @@ function timewarriorStatus()
     if (string.match(result, "no active")) then
         hs.alert.show("🕰️: No active time tracking!")
     else
-        hs.alert.show("🕰️: Currently tracking time...")
+        -- hs.alert.show(result)
+        lines = {}
+        for s in result:gmatch("[^\r\n]+") do
+            table.insert(lines, s)
+        end
+        local ts = ltrim(lines[2])
+        ts = string.sub(ts, 20)
+        hs.alert.show("🕰️: Tracking since " .. ts )
     end
 end
 
