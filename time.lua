@@ -47,3 +47,18 @@ end
 
 hs.hotkey.bind(hyperNoShift, "+", timewarriorToggle)
 hs.hotkey.bind(hyper, "+", timewarriorToggle)
+
+
+local function rememberToDrink()
+    -- hs.notify.new({title='Hammerspoon', informativeText='Remember to drink?'}):send()
+    -- hs.alert.show("Remember to drink?", hs.alert.defaultStyle, hs.screen.mainScreen(), "indev")
+    -- hs.alert.show("Hello from Hammerspoon!")
+    hs.notify.new({title="Hammerspoon", informativeText="Remember to drink", withdrawAfter=0}):send()
+end
+
+local function startUpdatingClockingMenu()
+    hs.timer.doEvery(60*30, rememberToDrink)
+--    hs.timer.doEvery(10, rememberToDrink)
+end
+
+startUpdatingClockingMenu()
