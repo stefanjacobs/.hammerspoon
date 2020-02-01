@@ -19,11 +19,11 @@ local applicationHotkeys = {
 -- Register Hyper + Key to Launch or Focus the given app
 for key, app in pairs(applicationHotkeys) do
     hs.hotkey.bind(hyper, key, function()
-        hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app}):send()
+        hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app, withdrawAfter=1}):send()
         hs.application.launchOrFocus(app)
     end)
     hs.hotkey.bind(hyperNoShift, key, function()
-        hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app}):send()
+        hs.notify.new({title="Hammerspoon", informativeText="📌 " .. app, withdrawAfter=1}):send()
         hs.application.launchOrFocus(app)
     end)
 end

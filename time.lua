@@ -53,7 +53,7 @@ function rememberToDrink()
     -- hs.notify.new({title='Hammerspoon', informativeText='Remember to drink?'}):send()
     -- hs.alert.show("Remember to drink?", hs.alert.defaultStyle, hs.screen.mainScreen(), "indev")
     -- hs.alert.show("Hello from Hammerspoon!")
-    hs.notify.new({title="Hammerspoon", informativeText="Remember to drink", withdrawAfter=0}):send()
+    hs.notify.new({title="Hammerspoon", informativeText="Remember to drink", withdrawAfter=1200}):send()
 end
 
 myTimer = hs.timer.new(1800, rememberToDrink)
