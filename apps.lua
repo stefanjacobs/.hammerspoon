@@ -11,7 +11,7 @@ local applicationHotkeys = {
     v = 'Visual Studio Code',
     o = 'Microsoft Outlook',
     e = 'Microsoft Excel',
-    p = 'Microsoft Powerpoint',
+    p = 'Preview',
     t = 'Microsoft Teams',
     x = 'KeePassXC'
 }
