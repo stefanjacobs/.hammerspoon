@@ -1,5 +1,5 @@
 
-moduleString = moduleString .. "🕰️: Time\n"
+moduleString = moduleString .. "🕰️ - Time\n"
 
 function time()
     hs.alert.show("🕰️" .. os.date('%H:%M:%S', os.time()))

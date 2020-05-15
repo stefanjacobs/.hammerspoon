@@ -13,6 +13,7 @@ require('window') -- hyper-hjkl z n c
 require('wifi') -- hyper-w
 require('vendosecret') -- hyper- .,
 require('time') -- hyper- -,+,´ 
+require('mic') -- hyper-m
 -- local log = hs.logger.new('init.lua', 'debug')
 
 -- keyUpDown = function(modifiers, key)
