@@ -14,6 +14,8 @@ require('wifi') -- hyper-w
 require('vendosecret') -- hyper- .,
 require('time') -- hyper- -,+,´ 
 require('mic') -- hyper-m
+local pushToTalk = require('mic') -- hyper-m & fn+ctrl+option for push-to-talk
+pushToTalk.init{"fn", "shift", "ctrl"}
 -- local log = hs.logger.new('init.lua', 'debug')
 
 -- keyUpDown = function(modifiers, key)
