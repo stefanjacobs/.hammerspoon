@@ -38,6 +38,7 @@ function timewarriorToggle()
     local handle = io.popen("~/bin/tw.sh")
     local result = handle:read("*a")
     handle:close()
+    -- hs.alert.show(result)
     if (string.match(result, "STOPPING")) then
         hs.alert.show("🕰️: 🛑 Stop tracking")
     else
@@ -49,12 +50,12 @@ hs.hotkey.bind(hyperNoShift, "+", timewarriorToggle)
 hs.hotkey.bind(hyper, "+", timewarriorToggle)
 
 
-function rememberToDrink()
-    -- hs.notify.new({title='Hammerspoon', informativeText='Remember to drink?'}):send()
-    -- hs.alert.show("Remember to drink?", hs.alert.defaultStyle, hs.screen.mainScreen(), "indev")
-    -- hs.alert.show("Hello from Hammerspoon!")
-    hs.notify.new({title="Hammerspoon", informativeText="Remember to drink", withdrawAfter=1200}):send()
-end
+-- function rememberToDrink()
+--     -- hs.notify.new({title='Hammerspoon', informativeText='Remember to drink?'}):send()
+--     -- hs.alert.show("Remember to drink?", hs.alert.defaultStyle, hs.screen.mainScreen(), "indev")
+--     -- hs.alert.show("Hello from Hammerspoon!")
+--     hs.notify.new({title="Hammerspoon", informativeText="Remember to drink", withdrawAfter=1200}):send()
+-- end
 
-myTimer = hs.timer.new(1800, rememberToDrink)
-myTimer:start()
+-- myTimer = hs.timer.new(1800, rememberToDrink)
+-- myTimer:start()

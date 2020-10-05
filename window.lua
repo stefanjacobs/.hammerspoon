@@ -14,12 +14,12 @@ function moveLeft()
 
     if (windowLastAction == "left" and windowLastLayout == hs.layout.left50) then
         -- log.i("left 50->30")
-        win:moveToUnit(hs.layout.left30)
-        windowLastLayout=hs.layout.left30
-    elseif (windowLastAction == "left" and windowLastLayout == hs.layout.left30) then
-        -- log.i("left 30->70")
         win:moveToUnit(hs.layout.left70)
         windowLastLayout=hs.layout.left70
+    elseif (windowLastAction == "left" and windowLastLayout == hs.layout.left70) then
+        -- log.i("left 70->30")
+        win:moveToUnit(hs.layout.left30)
+        windowLastLayout=hs.layout.left30
     else
         -- log.i("left ?->50")
         win:moveToUnit(hs.layout.left50)
@@ -36,13 +36,13 @@ function moveRight()
     if not win then return end
 
     if (windowLastAction == "right" and windowLastLayout == hs.layout.right50) then
-        -- log.i("right 50->30")
-        win:moveToUnit(hs.layout.right30)
-        windowLastLayout=hs.layout.right30
-    elseif (windowLastAction == "right" and windowLastLayout == hs.layout.right30) then
-        -- log.i("right 30->70")
+        -- log.i("right 50->70")
         win:moveToUnit(hs.layout.right70)
         windowLastLayout=hs.layout.right70
+    elseif (windowLastAction == "right" and windowLastLayout == hs.layout.right70) then
+        -- log.i("right 70->30")
+        win:moveToUnit(hs.layout.right30)
+        windowLastLayout=hs.layout.right30
     else
         -- log.i("right ?->50")
         win:moveToUnit(hs.layout.right50)
