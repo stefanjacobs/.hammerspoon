@@ -52,11 +52,11 @@ local function data_diff()
         obj.kbout = string.format("%3.0f", out_diff/1024) .. ' kb/s'
     end
     -- local disp_str = '⥄ ' .. obj.kbout .. ' ⥂ ' .. obj.kbin
-    local disp_str = 'Out' .. obj.kbout .. ' In' .. obj.kbin
+    local disp_str = 'O:' .. obj.kbout .. ' I:' .. obj.kbin
     if obj.darkmode then
-        obj.disp_str = hs.styledtext.new(disp_str, {font={size=10.0, color={hex="#FFFFFF"}}})
+        obj.disp_str = hs.styledtext.new(disp_str, {font={size=9.0, color={hex="#FFFFFF"}}})
     else
-        obj.disp_str = hs.styledtext.new(disp_str, {font={size=10.0, color={hex="#000000"}}})
+        obj.disp_str = hs.styledtext.new(disp_str, {font={size=9.0, color={hex="#000000"}}})
     end
     obj.menubar:setTitle(obj.disp_str)
     obj.inseq = in_seq
