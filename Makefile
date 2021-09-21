@@ -1,3 +1,3 @@
 install:
-	luarocks install json-lua
-
+	brew install lua luarocks
+	luarocks install lunajson
