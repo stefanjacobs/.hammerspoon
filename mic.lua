@@ -40,8 +40,8 @@ function updateInputVolumes()
             local inputVolume = device:inputVolume()
             if inputVolume == 0 then inputVolume = 100 end
             inputVolumes[device:uid()] = inputVolume
-            log.i("Setting unmuted volume for " .. device:uid() .. ": " ..
-                    inputVolumes[device:uid()])
+            -- log.i("Setting unmuted volume for " .. device:uid() .. ": " ..
+            --         inputVolumes[device:uid()])
         end
         if not device:watcherIsRunning() then
             device:watcherCallback(onInputDeviceChanged)
