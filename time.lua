@@ -9,11 +9,11 @@ hs.hotkey.bind(hyper, "´", time)
 hs.hotkey.bind(hyperNoShift, "´", time)
 
 function ltrim(s)
-    return s:match'^%s*(.*)'
+    return s:match('^%s*(.*)')
 end
 
 function timewarriorStatus()
-    local handle = io.popen("/usr/local/bin/timew")
+    local handle = io.popen("/opt/homebrew/bin/timew")
     local result = handle:read("*a")
     handle:close()
     if (string.match(result, "no active")) then
