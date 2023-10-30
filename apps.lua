@@ -12,7 +12,7 @@ local applicationHotkeys = {
     o = 'Microsoft Outlook',
     e = 'Microsoft Excel',
     p = 'Preview',
-    t = 'Microsoft Teams',
+    t = 'Microsoft Teams (work or school)',
     x = 'KeePassXC',
     u = 'Obsidian'
 }
