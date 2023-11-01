@@ -35,12 +35,17 @@ function moveRight()
     local win = hs.window.focusedWindow();
     if not win then return end
 
+    local right90 = hs.geometry.rect(0.05, 0, 0.95, 1)
+
     if (windowLastAction == "right" and windowLastLayout == hs.layout.right50) then
         -- log.i("right 50->70")
         win:moveToUnit(hs.layout.right70)
         windowLastLayout=hs.layout.right70
     elseif (windowLastAction == "right" and windowLastLayout == hs.layout.right70) then
         -- log.i("right 70->30")
+        win:moveToUnit(right90)
+        windowLastLayout=right90
+    elseif (windowLastAction == "right" and windowLastLayout == right90) then
         win:moveToUnit(hs.layout.right30)
         windowLastLayout=hs.layout.right30
     else
